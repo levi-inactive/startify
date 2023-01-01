@@ -1,11 +1,11 @@
 <script lang="ts">
-	//const clientSecret = "e9f747f0bbb249c4a8572d64df71323c"
+	import keys from '$lib/keys.json';
 
-	const authorizationURL = new URL('https://accounts.spotify.com/authorize');
+	const authorizationURL = new URL(keys.spotify.authorizationURL);
 
-	const clientID = '005f81f48af84e85a2e6399fc784f157';
+	const clientID = keys.spotify.clientID;
 	const responseType = 'code';
-	const redirectURI = 'http://localhost:5173/callback/';
+	const redirectURI = keys.spotify.redirectURI;
 	const state = crypto.randomUUID();
 
 	const stateKey = 'spotify_auth_state';
